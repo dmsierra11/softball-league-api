@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "name": "Layetanos",
+    "wins": 57,
+    "losses": 36,
+    "percentage": "613",
+    "gamesBehind": "-"
+  },
+  {
+    "id": "2",
+    "name": "Barcino Blue Socks",
+    "wins": 56,
+    "losses": 39,
+    "percentage": "589",
+    "gamesBehind": "2"
+  },
+  {
+    "id": "3",
+    "name": "Arañas de Gava",
+    "wins": 51,
+    "losses": 41,
+    "percentage": "554",
+    "gamesBehind": "5,5"
+  },
+  {
+    "id": "4",
+    "name": "Tiburones",
+    "wins": 46,
+    "losses": 47,
+    "percentage": "495",
+    "gamesBehind": "11"
+  },
+  {
+    "id": "5",
+    "name": "Aguilas",
+    "wins": 43,
+    "losses": 50,
+    "percentage": "462",
+    "gamesBehind": "14"
+  }
+]
