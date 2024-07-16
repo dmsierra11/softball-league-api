@@ -5,6 +5,7 @@ import { TeamsModule } from './teams/teams.module';
 import { PlayersModule } from './players/players.module';
 import { GamesModule } from './games/games.module';
 import { ConfigModule } from '@nestjs/config';
+import { StatsModule } from './stats/stats.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { ConfigModule } from '@nestjs/config';
     TeamsModule,
     PlayersModule,
     GamesModule,
+    StatsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

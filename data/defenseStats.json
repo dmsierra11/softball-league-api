@@ -1,0 +1,170 @@
+[
+  {
+    "name": "RAFAEL TORRES",
+    "position": "CF",
+    "team": "Layetanos",
+    "stats": {
+      "": "1",
+      "E": "0",
+      "O": "0",
+      "A": "0",
+      "OUT R": ""
+    }
+  },
+  {
+    "name": "ANGEL",
+    "position": "SF/DH",
+    "team": "Layetanos",
+    "stats": {
+      "": "2",
+      "E": "0",
+      "O": "0",
+      "A": "0",
+      "OUT R": ""
+    }
+  },
+  {
+    "name": "RITA DI BELLA",
+    "position": "2B",
+    "team": "Layetanos",
+    "stats": {
+      "": "3",
+      "E": "0",
+      "O": "0",
+      "A": "0",
+      "OUT R": ""
+    }
+  },
+  {
+    "name": "SARAH MARQUEZ",
+    "position": "SF/DH",
+    "team": "Layetanos",
+    "stats": {
+      "": "4",
+      "E": "0",
+      "O": "0",
+      "A": "0",
+      "OUT R": ""
+    }
+  },
+  {
+    "name": "MARIO SANCHEZ",
+    "position": "3B",
+    "team": "Layetanos",
+    "stats": {
+      "": "5",
+      "E": "0",
+      "O": "0",
+      "A": "0",
+      "OUT R": ""
+    }
+  },
+  {
+    "name": "GUSTAVO TORRES",
+    "position": "SS",
+    "team": "Layetanos",
+    "stats": {
+      "": "6",
+      "E": "0",
+      "O": "0",
+      "A": "0",
+      "OUT R": ""
+    }
+  },
+  {
+    "name": "VICTOR ARIAS",
+    "position": "SS",
+    "team": "Layetanos",
+    "stats": {
+      "": "7",
+      "E": "0",
+      "O": "0",
+      "A": "0",
+      "OUT R": ""
+    }
+  },
+  {
+    "name": "JOSE DELGADO",
+    "position": "1B",
+    "team": "Layetanos",
+    "stats": {
+      "": "8",
+      "E": "0",
+      "O": "0",
+      "A": "0",
+      "OUT R": ""
+    }
+  },
+  {
+    "name": "CARLA ROS",
+    "position": "SF/DH",
+    "team": "Layetanos",
+    "stats": {
+      "": "9",
+      "E": "0",
+      "O": "0",
+      "A": "0",
+      "OUT R": ""
+    }
+  },
+  {
+    "name": "GIANFRANCO NION",
+    "position": "LF",
+    "team": "Layetanos",
+    "stats": {
+      "": "10",
+      "E": "0",
+      "O": "0",
+      "A": "0",
+      "OUT R": ""
+    }
+  },
+  {
+    "name": "CRISTIAN OVIEDO",
+    "position": "RF",
+    "team": "Layetanos",
+    "stats": {
+      "": "11",
+      "E": "0",
+      "O": "0",
+      "A": "0",
+      "OUT R": ""
+    }
+  },
+  {
+    "name": "HUGO CIERCOLES",
+    "position": "RF",
+    "team": "Layetanos",
+    "stats": {
+      "": "12",
+      "E": "0",
+      "O": "2",
+      "A": "0",
+      "OUT R": ""
+    }
+  },
+  {
+    "name": "JOHN MARCANO",
+    "position": "P",
+    "team": "Layetanos",
+    "stats": {
+      "": "13",
+      "E": "0",
+      "O": "3",
+      "A": "0",
+      "OUT R": ""
+    }
+  },
+  {
+    "name": "RAFAEL PARRA",
+    "position": "C",
+    "team": "Layetanos",
+    "stats": {
+      "": "14",
+      "E": "1",
+      "O": "1",
+      "A": "0",
+      "OUT R": "1"
+    }
+  }
+]
