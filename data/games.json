@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "date": "2024-07-07T14:00:00Z",
+    "location": "Field 1",
+    "homeTeam": {
+      "name": "Barcino Blue Socks",
+      "score": 10
+    },
+    "awayTeam": {
+      "name": "Layetanos",
+      "score": 6
+    }
+  },
+  {
+    "id": 2,
+    "date": "2024-07-07T15:30:00Z",
+    "location": "Field 2",
+    "homeTeam": {
+      "name": "Layetanos",
+      "score": 6
+    },
+    "awayTeam": {
+      "name": "Barcino Blue Socks",
+      "score": 10
+    }
+  },
+  {
+    "id": 3,
+    "date": "2024-08-01T12:00:00Z",
+    "location": "Field 3",
+    "homeTeam": {
+      "name": "Barcino Blue Socks",
+      "record": "10-9"
+    },
+    "awayTeam": {
+      "name": "Layetanos",
+      "record": "6-10"
+    }
+  }
+]
