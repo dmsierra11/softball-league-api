@@ -1,5 +1,17 @@
 [
   {
+    "href": "/news/dragons-victory",
+    "imgSrc": "/images/news/dragons-victory.jpg",
+    "title": "Los Dragones ganan el campeonato regional",
+    "text": "Los Dragones han ganado el campeonato regional después de una emocionante final contra los Tigres. El partido se celebró en el estadio de Montjuic."
+  },
+  {
+    "href": "/news/new-stadium-opening",
+    "imgSrc": "/images/news/new-stadium-opening.jpg",
+    "title": "Inauguración del nuevo estadio en Barcelona",
+    "text": "El nuevo estadio en Barcelona será inaugurado el próximo mes. Este estadio moderno será la sede de varios eventos deportivos importantes."
+  },
+  {
     "href": "/news/layetanos-debut",
     "imgSrc": "https://img.mlbstatic.com/mlb-images/image/upload/t_16x9/t_w2208/mlb/js2wwksdommujc6zijks.jpg",
     "title": "Los Layetanos hacen su debut en un torneo de la Liga Unica",

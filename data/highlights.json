@@ -10,5 +10,23 @@
     "imageSrc": "/images/news/summer-cup-2024.jpg",
     "title": "6 innings en blanco para Rafa Parra",
     "text": "Rafa Parra ha estado intratable en su primera actuación con los Layetanos, propinando 6 arepas a los Blue Socks"
+  },
+  {
+    "href": "/news/",
+    "imageSrc": "/images/news/home-run.jpg",
+    "title": "Home run de Carla López",
+    "text": "Carla López conectó un home run en la última entrada para asegurar la victoria de su equipo."
+  },
+  {
+    "href": "/news/",
+    "imageSrc": "/images/news/pitcher.jpg",
+    "title": "No-hitter de Ana Martínez",
+    "text": "Ana Martínez lanzó un no-hitter en un emocionante partido contra los Tigres."
+  },
+  {
+    "href": "/news/",
+    "imageSrc": "/images/news/celebration.jpg",
+    "title": "Victoria épica de los Halcones",
+    "text": "Los Halcones remontaron un marcador adverso para ganar en extra innings."
   }
 ]
