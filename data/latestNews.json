@@ -1,13 +1,13 @@
 [
   {
     "href": "/news/dragons-victory",
-    "imgSrc": "/images/news/dragons-victory.jpg",
+    "imgSrc": "https://raw.githubusercontent.com/dmsierra11/softball-league-api/images/assets/images/dragons-victory.webp",
     "title": "Los Dragones ganan el campeonato regional",
     "text": "Los Dragones han ganado el campeonato regional después de una emocionante final contra los Tigres. El partido se celebró en el estadio de Montjuic."
   },
   {
     "href": "/news/new-stadium-opening",
-    "imgSrc": "/images/news/new-stadium-opening.jpg",
+    "imgSrc": "https://raw.githubusercontent.com/dmsierra11/softball-league-api/images/assets/images/new-stadium-opening.webp",
     "title": "Inauguración del nuevo estadio en Barcelona",
     "text": "El nuevo estadio en Barcelona será inaugurado el próximo mes. Este estadio moderno será la sede de varios eventos deportivos importantes."
   },
