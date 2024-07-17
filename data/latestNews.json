@@ -1,38 +1,32 @@
 [
   {
     "href": "/news/dragons-victory",
-    "imgSrc": "/images/news/dragons-victory.jpg",
+    "imgSrc": "https://raw.githubusercontent.com/dmsierra11/softball-league-api/images/assets/images/dragons-victory.webp",
     "title": "Los Dragones ganan el campeonato regional",
     "text": "Los Dragones han ganado el campeonato regional después de una emocionante final contra los Tigres. El partido se celebró en el estadio de Montjuic."
   },
   {
     "href": "/news/new-stadium-opening",
-    "imgSrc": "/images/news/new-stadium-opening.jpg",
+    "imgSrc": "https://raw.githubusercontent.com/dmsierra11/softball-league-api/images/assets/images/new-stadium-opening.webp",
     "title": "Inauguración del nuevo estadio en Barcelona",
     "text": "El nuevo estadio en Barcelona será inaugurado el próximo mes. Este estadio moderno será la sede de varios eventos deportivos importantes."
   },
   {
     "href": "/news/layetanos-debut",
-    "imgSrc": "https://img.mlbstatic.com/mlb-images/image/upload/t_16x9/t_w2208/mlb/js2wwksdommujc6zijks.jpg",
-    "title": "Los Layetanos hacen su debut en un torneo de la Liga Unica",
+    "imgSrc": "https://raw.githubusercontent.com/dmsierra11/softball-league-api/images/assets/images/layetanos-debut.webp",
+    "title": "Los Layetanos hacen su debut en un el Summer Camp Barcelona 2024",
     "text": "Los Layetanos han sido seleccionados para su debut en un torneo de la Liga Unica. El encuentro será el próximo viernes en el estadio de Montjuic."
   },
   {
     "href": "/news/summer-cup-2024",
-    "imgSrc": "/images/news/summer-cup-2024.jpg",
-    "title": "Empieza el Summer Cup 2024",
-    "text": "El próximo viernes, el Summer Cup 2024 se abrirá para la primera vez en su historia. El torneo se llevará a cabo en la ciudad de Barcelona, Cataluña."
+    "imgSrc": "https://raw.githubusercontent.com/dmsierra11/softball-league-api/images/assets/images/summer-cup-2024.webp",
+    "title": "Empieza el Summer Camp 2024",
+    "text": "El próximo viernes, el Summer Camp 2024 se abrirá para la primera vez en su historia. El torneo se llevará a cabo en la ciudad de Barcelona, Cataluña."
   },
   {
     "href": "/news/summer-cup-2024-sign-up",
-    "imgSrc": "/images/news/summer-cup-2024-sign-up.jpg",
-    "title": "Mas de 1000 personas han registrado su interés en el Summer Cup 2024",
+    "imgSrc": "https://raw.githubusercontent.com/dmsierra11/softball-league-api/images/assets/images/summer-cup-2024-sign-up.webp",
+    "title": "Mas de 1000 personas han registrado su interés en el Summer Camp 2024",
     "text": "La organización ha registrado más de 1000 personas de todo el mundo para participar en el próximo Summer Cup 2024. El torneo se llevará a cabo en la ciudad de Barcelona, Cataluña."
-  },
-  {
-    "href": "/news/barcinos-liga-unica",
-    "imgSrc": "/images/news/barcinos-liga-unica.jpg",
-    "title": "Barcinos se une a la Liga Unica",
-    "text": "Barcinos se une a la Liga Unica. El torneo se llevará a cabo en la ciudad de Barcelona, Cataluña."
   }
 ]
