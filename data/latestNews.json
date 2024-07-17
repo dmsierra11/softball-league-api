@@ -20,19 +20,13 @@
   {
     "href": "/news/summer-cup-2024",
     "imgSrc": "https://raw.githubusercontent.com/dmsierra11/softball-league-api/images/assets/images/summer-cup-2024.webp",
-    "title": "Empieza el Summer Cup 2024",
+    "title": "Empieza el Summer Camp 2024",
     "text": "El próximo viernes, el Summer Camp 2024 se abrirá para la primera vez en su historia. El torneo se llevará a cabo en la ciudad de Barcelona, Cataluña."
   },
   {
     "href": "/news/summer-cup-2024-sign-up",
     "imgSrc": "https://raw.githubusercontent.com/dmsierra11/softball-league-api/images/assets/images/summer-cup-2024-sign-up.webp",
-    "title": "Mas de 1000 personas han registrado su interés en el Summer Cup 2024",
+    "title": "Mas de 1000 personas han registrado su interés en el Summer Camp 2024",
     "text": "La organización ha registrado más de 1000 personas de todo el mundo para participar en el próximo Summer Cup 2024. El torneo se llevará a cabo en la ciudad de Barcelona, Cataluña."
-  },
-  {
-    "href": "/news/barcinos-summer-camp-2024",
-    "imgSrc": "https://raw.githubusercontent.com/dmsierra11/softball-league-api/images/assets/images/barcinos-summer-camp-2024.webp",
-    "title": "Barcinos se une a la Summer Camp 2024",
-    "text": "Barcinos se une a la Summer Camp 2024. El torneo se llevará a cabo en la ciudad de Barcelona, Cataluña."
   }
 ]
