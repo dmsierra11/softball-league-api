@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Query } from '@nestjs/common';
 import { TeamsService } from './teams.service';
 
 @Controller('teams')
@@ -6,8 +6,8 @@ export class TeamsController {
   constructor(private readonly teamsService: TeamsService) {}
 
   @Get()
-  findAll() {
-    return this.teamsService.findAll();
+  findAll(@Query('type') type: string) {
+    return this.teamsService.findAll(type);
   }
 
   @Get(':id')
