@@ -1,4 +1,6 @@
 [
-  { "id": 1, "name": "Team A", "coach": "Coach A" },
-  { "id": 2, "name": "Team B", "coach": "Coach B" }
+  { "id": 1, "name": "Tiburones", "logo": "", "short_name": "TIBU" },
+  { "id": 2, "name": "Layetanos", "logo": "", "short_name": "LAYS" },
+  { "id": 3, "name": "Arañas de Gava", "logo": "", "short_name": "ARA" },
+  { "id": 4, "name": "Chuchos de Viladecans", "logo": "", "short_name": "CHV" }
 ]
