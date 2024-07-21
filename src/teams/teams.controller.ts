@@ -11,7 +11,12 @@ export class TeamsController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.teamsService.findOne(Number(id));
+  findOne(@Param('id') id: string, @Query('roster') roster: boolean) {
+    let teamRoster = [];
+    if (roster) {
+      teamRoster = this.teamsService.findRoster(Number(id));
+    }
+    const team = this.teamsService.findOne(Number(id));
+    return { ...team, players: teamRoster };
   }
 }
