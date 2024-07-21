@@ -45,4 +45,14 @@ export class TeamsService {
   findOne(id: number) {
     return this.teams.find((team) => team.id === id);
   }
+
+  findRoster(id: number) {
+    const playersDataPath = path.join(
+      __dirname,
+      `../../data/roster-${id}.json`,
+    );
+    const playersData = fs.readFileSync(playersDataPath, 'utf8');
+    const players = JSON.parse(playersData);
+    return players;
+  }
 }
