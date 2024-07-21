@@ -1,6 +1,34 @@
 [
-  { "id": 1, "name": "Tiburones", "logo": "", "short_name": "TIBU" },
-  { "id": 2, "name": "Layetanos", "logo": "", "short_name": "LAYS" },
-  { "id": 3, "name": "Arañas de Gava", "logo": "", "short_name": "ARA" },
-  { "id": 4, "name": "Chuchos de Viladecans", "logo": "", "short_name": "CHV" }
+  {
+    "id": 1,
+    "name": "Tiburones",
+    "logo": "",
+    "short_name": "TIBU",
+    "wins": "0",
+    "losses": "0"
+  },
+  {
+    "id": 2,
+    "name": "Layetanos",
+    "logo": "",
+    "short_name": "LAYS",
+    "wins": "0",
+    "losses": "0"
+  },
+  {
+    "id": 3,
+    "name": "Arañas de Gava",
+    "logo": "",
+    "short_name": "ARA",
+    "wins": "0",
+    "losses": "0"
+  },
+  {
+    "id": 4,
+    "name": "Chuchos de Viladecans",
+    "logo": "",
+    "short_name": "CHV",
+    "wins": "0",
+    "losses": "0"
+  }
 ]
