@@ -19,7 +19,7 @@ export class UploadController {
       storage: diskStorage({
         destination: './uploads',
         filename: (req, file, cb) => {
-          const filename = `${Date.now()}-${file.originalname}`;
+          const filename = file.originalname;
           cb(null, filename);
         },
       }),
@@ -28,9 +28,17 @@ export class UploadController {
   async uploadFile(
     @UploadedFile() file: Express.Multer.File,
     @Body('type') type: string,
+    @Body('id') id: string,
   ) {
     const data = await this.uploadService.handleFileUpload(file);
-    this.uploadService.saveData(data, type || file.originalname);
-    return { message: 'File uploaded successfully', data };
+    let fileName = file.originalname;
+    if (type) {
+      fileName = type;
+    }
+    if (id) {
+      fileName = `${type}-${id}`;
+    }
+    this.uploadService.saveData(data, fileName);
+    return data;
   }
 }
