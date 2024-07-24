@@ -29,6 +29,8 @@ export class UploadController {
     @UploadedFile() file: Express.Multer.File,
     @Body('type') type: string,
     @Body('id') id: string,
+    @Body('gameId') gameId: string,
+    @Body('teamId') teamId: string,
   ) {
     const data = await this.uploadService.handleFileUpload(file);
     let fileName = file.originalname;
@@ -36,9 +38,21 @@ export class UploadController {
       fileName = type;
     }
     if (id) {
-      fileName = `${type}-${id}`;
+      fileName = fileName.concat(`-${id}`);
     }
-    this.uploadService.saveData(data, fileName);
+    if (gameId) {
+      fileName = fileName.concat(`-${gameId}`);
+    }
+    if (teamId) {
+      fileName = fileName.concat(`-${teamId}`);
+    }
+    if (fileName.includes('roster')) {
+      this.uploadService.saveRosterData(data, fileName);
+    } else if (fileName.includes('batting')) {
+      this.uploadService.saveBattingStats(data, fileName);
+    } else {
+      this.uploadService.saveData(data, fileName);
+    }
     return data;
   }
 }

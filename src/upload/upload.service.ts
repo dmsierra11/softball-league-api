@@ -37,4 +37,28 @@ export class UploadService {
     const filePath = path.join(__dirname, '../../data', `${file}.json`);
     fs.writeFileSync(filePath, JSON.stringify(data));
   }
+
+  async saveRosterData(data: any[], fileName: string) {
+    data.forEach((player) => {
+      if (player.position) {
+        player.positions = player.position.split('/');
+        player.position = undefined;
+      }
+    });
+    const file = fileName.toLowerCase().replace('.csv', '');
+    const filePath = path.join(__dirname, '../../data', `${file}.json`);
+    fs.writeFileSync(filePath, JSON.stringify(data));
+  }
+
+  async saveBattingStats(data: any[], fileName: string) {
+    data.forEach((player) => {
+      if (player.position) {
+        player.positions = player.position.split('/');
+        player.position = undefined;
+      }
+    });
+    const file = fileName.toLowerCase().replace('.csv', '');
+    const filePath = path.join(__dirname, '../../data', `${file}.json`);
+    fs.writeFileSync(filePath, JSON.stringify(data));
+  }
 }
