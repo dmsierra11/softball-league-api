@@ -6,17 +6,21 @@ export class TeamsController {
   constructor(private readonly teamsService: TeamsService) {}
 
   @Get()
-  findAll(@Query('type') type: string) {
-    return this.teamsService.findAll(type);
+  async findAll(@Query('type') type: string) {
+    return await this.teamsService.findAll(type);
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string, @Query('roster') roster: boolean) {
-    let teamRoster = [];
-    if (roster) {
-      teamRoster = this.teamsService.findRoster(Number(id));
+  async findOne(
+    @Param('id') id: number,
+    @Query('tournament_id') tournamentId: number,
+  ) {
+    let team = {};
+    if (tournamentId) {
+      team = await this.teamsService.findRoster(id, tournamentId);
+      return team;
     }
-    const team = this.teamsService.findOne(Number(id));
-    return { ...team, players: teamRoster };
+    team = await this.teamsService.findOne(Number(id));
+    return team;
   }
 }
