@@ -5,9 +5,13 @@ import { TeamsModule } from './teams/teams.module';
 import { PlayersModule } from './players/players.module';
 import { GamesModule } from './games/games.module';
 import { ConfigModule } from '@nestjs/config';
-import { StatsModule } from './stats/stats.module';
 import { NewsModule } from './news/news.module';
 import { UploadModule } from './upload/upload.module';
+import { BattingStatsModule } from './batting_stats/batting_stats.module';
+import { DefenseStatsModule } from './defense_stats/defense_stats.module';
+import { PitchingStatsModule } from './pitching_stats/pitching_stats.module';
+import { StandingsModule } from './standings/standings.module';
+import { DatabaseService } from './database/database.service';
 
 @Module({
   imports: [
@@ -17,11 +21,14 @@ import { UploadModule } from './upload/upload.module';
     TeamsModule,
     PlayersModule,
     GamesModule,
-    StatsModule,
     NewsModule,
     UploadModule,
+    BattingStatsModule,
+    DefenseStatsModule,
+    PitchingStatsModule,
+    StandingsModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, DatabaseService],
 })
 export class AppModule {}
