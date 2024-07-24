@@ -1,0 +1,32 @@
+[
+  {
+    "team_id": 1,
+    "tournament_id": 1,
+    "wins": 1,
+    "losses": 0
+  },
+  {
+    "team_id": 2,
+    "tournament_id": 1,
+    "wins": 0,
+    "losses": 0
+  },
+  {
+    "team_id": 3,
+    "tournament_id": 1,
+    "wins": 0,
+    "losses": 0
+  },
+  {
+    "team_id": 4,
+    "tournament_id": 1,
+    "wins": 0,
+    "losses": 0
+  },
+  {
+    "team_id": 5,
+    "tournament_id": 1,
+    "wins": 0,
+    "losses": 0
+  }
+]

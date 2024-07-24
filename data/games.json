@@ -1,41 +1,82 @@
 [
   {
-    "id": 1,
-    "date": "2024-07-28T14:00:00Z",
-    "location": "Field 1",
-    "homeTeam": {
-      "name": "Barcino Blue Socks",
-      "record": "10-6"
-    },
-    "awayTeam": {
-      "name": "Layetanos",
-      "record": "6-10"
-    }
+    "away_team_id": 5,
+    "home_team_id": 4,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "9:00",
+    "location_id": 1
   },
   {
-    "id": 2,
-    "date": "2024-07-28T15:30:00Z",
-    "location": "Field 2",
-    "homeTeam": {
-      "name": "Layetanos",
-      "record": "6-10"
-    },
-    "awayTeam": {
-      "name": "Barcino Blue Socks",
-      "record": "10-6"
-    }
+    "away_team_id": 1,
+    "home_team_id": 3,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "9:00",
+    "location_id": 2
   },
   {
-    "id": 3,
-    "date": "2024-07-28T12:00:00Z",
-    "location": "Field 3",
-    "homeTeam": {
-      "name": "Barcino Blue Socks",
-      "record": "10-9"
-    },
-    "awayTeam": {
-      "name": "Layetanos",
-      "record": "6-10"
-    }
+    "away_team_id": 1,
+    "home_team_id": 4,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "10:15",
+    "location_id": 1
+  },
+  {
+    "away_team_id": 2,
+    "home_team_id": 3,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "10:15",
+    "location_id": 2
+  },
+  {
+    "away_team_id": 2,
+    "home_team_id": 5,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "11:30",
+    "location_id": 1
+  },
+  {
+    "away_team_id": 4,
+    "home_team_id": 3,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "12:30",
+    "location_id": 1
+  },
+  {
+    "away_team_id": 5,
+    "home_team_id": 1,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "12:30",
+    "location_id": 2
+  },
+  {
+    "away_team_id": 2,
+    "home_team_id": 1,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "14:00",
+    "location_id": 1
+  },
+  {
+    "away_team_id": 3,
+    "home_team_id": 5,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "15:15",
+    "location_id": 1
+  },
+  {
+    "away_team_id": 2,
+    "home_team_id": 4,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "15:15",
+    "location_id": 2
   }
 ]

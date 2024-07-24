@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "name": "Tiburones",
     "logo": "",
     "short_name": "TIBU",
@@ -8,7 +7,6 @@
     "losses": "0"
   },
   {
-    "id": 2,
     "name": "Layetanos",
     "logo": "",
     "short_name": "LAYS",
@@ -16,7 +14,6 @@
     "losses": "0"
   },
   {
-    "id": 3,
     "name": "Arañas de Gava",
     "logo": "",
     "short_name": "ARA",
@@ -24,10 +21,16 @@
     "losses": "0"
   },
   {
-    "id": 4,
     "name": "Chuchos de Viladecans",
     "logo": "",
     "short_name": "CHV",
+    "wins": "0",
+    "losses": "0"
+  },
+  {
+    "name": "Barcino Blue Socks",
+    "logo": "",
+    "short_name": "BAR",
     "wins": "0",
     "losses": "0"
   }

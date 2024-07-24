@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "name": "Nickolson De Freitas",
+    "number": "",
+    "gender": "M",
+    "nationality": "Venezuela",
+    "positions": ["OF"]
+  },
+  {
+    "id": 2,
+    "name": "Hillary Rodríguez",
+    "number": "",
+    "gender": "F",
+    "nationality": "Rep. Dominicana",
+    "positions": ["IF"]
+  },
+  {
+    "id": 3,
+    "name": "Eddy Mendoza",
+    "number": "",
+    "gender": "M",
+    "nationality": "Rep. Dominicana",
+    "positions": ["P", "IF"]
+  },
+  {
+    "id": 4,
+    "name": "Edwin Lebron",
+    "number": "",
+    "gender": "M",
+    "nationality": "Rep. Dominicana",
+    "positions": ["P"]
+  },
+  {
+    "id": 5,
+    "name": "Geral Veloz",
+    "number": "",
+    "gender": "M",
+    "nationality": "Rep. Dominicana",
+    "positions": ["OF"]
+  },
+  {
+    "id": 6,
+    "name": "Manuel Mendoza",
+    "number": "",
+    "gender": "M",
+    "nationality": "España",
+    "positions": ["OF"]
+  },
+  {
+    "id": 7,
+    "name": "Leandro Espinoza",
+    "number": "",
+    "gender": "M",
+    "nationality": "Rep. Dominicana",
+    "positions": ["C"]
+  },
+  {
+    "id": 8,
+    "name": "Pedro Reyes",
+    "number": "",
+    "gender": "M",
+    "nationality": "Rep. Dominicana",
+    "positions": ["C", "OF"]
+  },
+  {
+    "id": 9,
+    "name": "Judith Castro",
+    "number": "",
+    "gender": "M",
+    "nationality": "España",
+    "positions": ["IF"]
+  },
+  {
+    "id": 10,
+    "name": "Adony Campoalegre",
+    "number": "",
+    "gender": "M",
+    "nationality": "Cuba",
+    "positions": ["IF"]
+  },
+  {
+    "id": 11,
+    "name": "Jhorwuin Campo",
+    "number": "",
+    "gender": "M",
+    "nationality": "Venezuela",
+    "positions": ["UTIL"]
+  },
+  {
+    "id": 12,
+    "name": "Yafreisy Sánchez",
+    "number": "",
+    "gender": "M",
+    "nationality": "Rep. Dominicana",
+    "positions": ["IF"]
+  },
+  {
+    "id": 13,
+    "name": "Victoria Bijen",
+    "number": "",
+    "gender": "F",
+    "nationality": "Holanda",
+    "positions": ["OF"]
+  },
+  {
+    "id": 14,
+    "name": "José De Santis",
+    "number": "",
+    "gender": "M",
+    "nationality": "Venezuela",
+    "positions": ["OF"]
+  },
+  {
+    "id": 15,
+    "name": "Gabriel De Santis",
+    "number": "",
+    "gender": "M",
+    "nationality": "Venezuela",
+    "positions": ["IF"]
+  },
+  {
+    "id": 16,
+    "name": "Daniel Jiménez",
+    "number": "",
+    "gender": "M",
+    "nationality": "Venezuela",
+    "positions": ["OF"]
+  }
+]
