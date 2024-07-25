@@ -13,7 +13,7 @@ import { BattingStats } from './batting_stats.types';
 
 @Controller('batting_stats')
 export class BattingStatsController {
-  constructor(private readonly battingStatsService: BattingStatsService) {}
+  constructor(private readonly battingStatsService: BattingStatsService) { }
 
   @Get()
   async findAll(): Promise<BattingStats[]> {
