@@ -23,8 +23,8 @@ export class BattingStatsService {
         stats: {
           'AB': row.at_bats,
           'H': row.hits,
-          '2B': row.doubles,
-          '3B': row.triples,
+          '2B': row['2B'],
+          '3B': row['3B'],
           'HR': row.home_runs,
           'AVG': row.batting_average,
           'R': row.runs,
@@ -34,6 +34,14 @@ export class BattingStatsService {
           'OBP': row.on_base_percentage,
           'SB': row.stolen_bases,
           'CS': row.caught_stealing,
+          'SF': row.sac_flies,
+          'SLUG': row.slugging_percentage,
+          'OPS': row.on_base_plus_slugging,
+          'PA': row.plate_appearances,
+          'GIDP': row.ground_into_double_plays,
+          'XBH': row.extra_base_hits,
+          'TB': row.total_bases,
+          'IBB': row.intentional_walks
         },
       };
     });

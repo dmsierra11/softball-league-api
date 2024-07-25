@@ -12,9 +12,20 @@ type Stats =
   | 'OBP'
   | 'SB'
   | 'CS'
+  | 'SF'
+  | 'SLUG'
+  | 'OPS'
+  | 'PA'
+  | 'GIDP'
+  | 'XBH'
+  | 'TB'
+  | 'IBB'
 
 export type BattingStats = {
+  player_id?: number;
+  // player_id: number;
   name: string;
+  // team_id?: number;
   team?: string;
   position?: string;
   stats: {
