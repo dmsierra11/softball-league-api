@@ -35,7 +35,8 @@ export class GamesService {
     console.log(`${rows.length} games found`);
     return rows.map((row) => ({
       ...row,
-      date: moment(row.date).tz('Europe/Madrid').format(), // Convert to Spain timezone
+      date: moment(row.date).tz('Europe/Madrid').format('DD/MM'), // Convert to Spain timezone
+      time: moment(row.time, 'HH:mm:ss').format('HH:mm'),
       home_team: {
         id: row.home_team_id,
         name: row.home_team,
