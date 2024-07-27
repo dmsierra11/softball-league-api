@@ -20,6 +20,30 @@ export class Game {
   @JoinColumn({ name: 'home_team_id' })
   homeTeam: Team;
 
+  @Column({ type: 'date', nullable: true })
+  date: string;
+
+  @Column({ type: 'time', nullable: true })
+  time: string;
+
+  @Column({ type: 'integer', nullable: true })
+  away_score: number;
+
+  @Column({ type: 'integer', nullable: true })
+  home_score: number;
+
+  @Column({ type: 'integer', nullable: true })
+  progress: number;
+
+  @Column({ type: 'string', nullable: true })
+  status:
+    | 'not_started'
+    | 'in_progress'
+    | 'finished'
+    | 'postponed'
+    | 'cancelled'
+    | 'delayed';
+
   @ManyToOne(() => Team, (team) => team.away_games)
   @JoinColumn({ name: 'away_team_id' })
   awayTeam: Team;
@@ -27,12 +51,6 @@ export class Game {
   @ManyToOne(() => Tournament, (tournament) => tournament.games)
   @JoinColumn({ name: 'tournament_id' })
   tournament: Tournament;
-
-  @Column({ type: 'date', nullable: true })
-  date: string;
-
-  @Column({ type: 'time', nullable: true })
-  time: string;
 
   @ManyToOne(() => Ballpark, { nullable: true })
   @JoinColumn({ name: 'location_id' })

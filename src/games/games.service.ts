@@ -5,7 +5,9 @@ import {
 } from '@nestjs/common';
 import { Pool } from 'pg';
 import * as moment from 'moment-timezone';
-import { PlayerStats } from 'src/players/players.types';
+import { BattingStats } from 'src/batting_stats/batting_stats.types';
+import { PitchingStats } from 'src/pitching_stats/pitching_stats.types';
+import { DefenseStats } from 'src/defense_stats/defense_stats.types';
 
 @Injectable()
 export class GamesService {
@@ -170,20 +172,23 @@ export class GamesService {
   }
 
   async updateGame(
+    team: 'home' | 'away',
     id: number,
     date?: string,
     time?: string,
     location_id?: number,
-    battingStats?: PlayerStats[],
-    pitchingStats?: PlayerStats[],
-    defenseStats?: PlayerStats[],
+    battingStats?: BattingStats[],
+    pitchingStats?: PitchingStats[],
+    defenseStats?: DefenseStats[],
   ) {
-    const querySelect = `SELECT * FROM games WHERE id = $1`;
-    const { rows: rowsSelect } = await this.pool.query(querySelect, [id]);
+    const querySelectGame = `SELECT * FROM games WHERE id = $1`;
+    const { rows: rowsSelect } = await this.pool.query(querySelectGame, [id]);
     if (rowsSelect.length === 0) {
       throw new NotFoundException('Game not found');
     }
-    console.log('time: ', time);
+    const { home_team_id, away_team_id } = rowsSelect[0];
+    const team_id = team === 'home' ? home_team_id : away_team_id;
+    console.log(`Updating game ${id} for team ${team_id}`);
 
     let response = {};
     if (date) {
@@ -210,48 +215,148 @@ export class GamesService {
     }
 
     if (battingStats) {
-      for (const battingStat of battingStats) {
-        const resultPlayers = await this.pool.query(
-          `SELECT id FROM players WHERE LOWER(name) = LOWER($1)`,
-          [battingStat.name],
-        );
 
-        if (resultPlayers.rows.length === 0) {
-          throw new NotFoundException('Player not found');
-        }
+      const queryBattingStats = `SELECT * FROM batting_stats WHERE game_id = $1 AND team_id = $2`;
+      const { rows: rowsBatting } = await this.pool.query(queryBattingStats, [id, team_id]);
+      console.log('Querying batting stats: ', rowsBatting);
 
-        const resultBattingStats = await this.pool.query(
-          `SELECT id FROM batting_stats WHERE game_id = $1 AND player_id = $2 AND team_id = $3`,
-          [id, resultPlayers.rows[0].id, battingStat.team_id],
-        );
-
-        if (resultBattingStats.rows.length === 0) {
-          const resultInsert = await this.pool.query(
-            `INSERT INTO batting_stats (game_id, player_id, team_id) VALUES ($1, $2, $3)`,
-            [id, resultPlayers.rows[0].id, battingStat.team_id],
-          );
-          return resultInsert;
-        }
-
-        // const resultUpdate = await this.pool.query(
-        //   `UPDATE batting_stats SET game_id = $1, player_id = $2, team_id = $3 WHERE id = $4`,
-        //   [
-        //     id,
-        //     resultPlayers.rows[0].id,
-        //     battingStat.team_id,
-        //     resultBattingStats.rows[0].id,
-        //   ],
-        // );
+      if (rowsBatting.length > 0) {
+        console.log('Update existing batting stats');
+        rowsBatting.forEach(async (battingStat) => {
+          console.log('Updating batting stats for player ', battingStat.player_id);
+          const resultUpdate = await this.pool.query(`
+            UPDATE batting_stats SET at_bats = $2, runs = $3, hits = $4, doubles = $5, triples = $6, 
+            home_runs = $7, runs_batted_in = $8, walks = $9, strikeouts = $10, sac_flies = $11, stoles_bases = $12,
+            caught_stealing = $13, batting_average = $14, on_base_percentage = $15, slugging_percentage = $16,
+            on_base_plus_slugging = $17, plate_appearances = $18, ground_into_double_plays = $19, extra_base_hits = $20,
+            total_bases = $21, intentional_walks = $22 WHERE team_id = $23, AND player_id = $24 AND game_id = $1`, [
+            id,
+            Number(battingStat.stats.at_bats || ''),
+            Number(battingStat.stats.runs || ''),
+            Number(battingStat.stats.H || ''),
+            Number(battingStat.stats["2B"] || ''),
+            Number(battingStat.stats["3B"] || ''),
+            Number(battingStat.stats.HR || ''),
+            Number(battingStat.stats.RBI || ''),
+            Number(battingStat.stats.BB || ''),
+            Number(battingStat.stats.SO || ''),
+            Number(battingStat.stats.SF || ''),
+            Number(battingStat.stats.SB || ''),
+            Number(battingStat.stats.CS || ''),
+            Number(battingStat.stats.AVG || ''),
+            Number(battingStat.stats.OBP || ''),
+            Number(battingStat.stats.SLUG || ''),
+            Number(battingStat.stats.OPS || ''),
+            Number(battingStat.stats.PA || ''),
+            Number(battingStat.stats.GIDP || ''),
+            Number(battingStat.stats.XBH || ''),
+            Number(battingStat.stats.TB || ''),
+            Number(battingStat.stats.IBB || ''),
+          ]);
+          console.log(resultUpdate);
+        });
+      } else {
+        console.log('Insert new batting stats');
       }
+
+
+      //   for (const battingStat of battingStats) {
+      //     const resultPlayers = await this.pool.query(
+      //       `SELECT id FROM players WHERE LOWER(name) = LOWER($1)`,
+      //       [battingStat.name],
+      //     );
+
+      //     if (resultPlayers.rows.length === 0) {
+      //       throw new NotFoundException('Player not found');
+      //     }
+      //     console.log('Player found: ', resultPlayers.rows);
+
+      //     const resultBattingStats = await this.pool.query(
+      //       `SELECT * FROM batting_stats WHERE game_id = $1 AND player_id = $2 AND team_id = $3`,
+      //       [id, battingStat.id, team_id]);
+
+      //     if (resultBattingStats.rows.length === 0) {
+      //       try {
+      //         console.log(`Inserting new batting stats for player ${battingStat.id} ${battingStat.name}`);
+      //         console.log(`Team id: ${team_id}`);
+      //         await this.pool.query(
+      //           `INSERT INTO batting_stats (game_id, player_id, team_id, at_bats, runs, hits, doubles, triples, home_runs, runs_batted_in, walks,
+      //           strikeouts, sac_flies, stolen_bases, caught_stealing, batting_average, on_base_percentage, slugging_percentage, on_base_plus_slugging,
+      //           plate_appearances, ground_into_double_plays, extra_base_hits, total_bases, intentional_walks)
+      //           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24)`,
+      //           [id, battingStat.id, team_id,
+      //             Number(battingStat.stats?.AB || ''),
+      //             Number(battingStat.stats?.R || ''),
+      //             Number(battingStat.stats?.H || ''),
+      //             Number(battingStat.stats ? battingStat.stats["2B"] : ''),
+      //             Number(battingStat.stats ? battingStat.stats["3B"] : ''),
+      //             Number(battingStat.stats?.HR || ''),
+      //             Number(battingStat.stats?.RBI || ''),
+      //             Number(battingStat.stats?.BB || ''),
+      //             Number(battingStat.stats?.SO || ''),
+      //             Number(battingStat.stats?.SF || ''),
+      //             Number(battingStat.stats?.SB || ''),
+      //             Number(battingStat.stats?.CS || ''),
+      //             Number(battingStat.stats?.AVG || ''),
+      //             Number(battingStat.stats?.OBP || ''),
+      //             Number(battingStat.stats?.SLUG || ''),
+      //             Number(battingStat.stats?.OPS || ''),
+      //             Number(battingStat.stats?.PA || ''),
+      //             Number(battingStat.stats?.GIDP || ''),
+      //             Number(battingStat.stats?.XBH || ''),
+      //             Number(battingStat.stats?.TB || ''),
+      //             Number(battingStat.stats?.IBB || ''),
+      //           ]
+      //         );
+      //         // return resultInsert.rows;
+      //         console.log(`Created new batting stats for player ${battingStat.id} ${battingStat.name}`);
+      //       } catch (error) {
+      //         console.error('Error inserting ', error.message)
+      //       }
+      //     } else {
+      //       const resultUpdate = await this.pool.query(`
+      //         UPDATE batting_stats SET at_bats = $2, runs = $3, hits = $4, doubles = $5, triples = $6, 
+      //         home_runs = $7, runs_batted_in = $8, walks = $9, strikeouts = $10, sac_flies = $11, stoles_bases = $12,
+      //         caught_stealing = $13, batting_average = $14, on_base_percentage = $15, slugging_percentage = $16,
+      //         on_base_plus_slugging = $17, plate_appearances = $18, ground_into_double_plays = $19, extra_base_hits = $20,
+      //         total_bases = $21, intentional_walks = $22 WHERE team_id = $23, AND player_id = $24 AND game_id = $1`, [
+      //         id,
+      //         Number(battingStat.stats.AB || ''),
+      //         Number(battingStat.stats.R || ''),
+      //         Number(battingStat.stats.H || ''),
+      //         Number(battingStat.stats["2B"] || ''),
+      //         Number(battingStat.stats["3B"] || ''),
+      //         Number(battingStat.stats.HR || ''),
+      //         Number(battingStat.stats.RBI || ''),
+      //         Number(battingStat.stats.BB || ''),
+      //         Number(battingStat.stats.SO || ''),
+      //         Number(battingStat.stats.SF || ''),
+      //         Number(battingStat.stats.SB || ''),
+      //         Number(battingStat.stats.CS || ''),
+      //         Number(battingStat.stats.AVG || ''),
+      //         Number(battingStat.stats.OBP || ''),
+      //         Number(battingStat.stats.SLUG || ''),
+      //         Number(battingStat.stats.OPS || ''),
+      //         Number(battingStat.stats.PA || ''),
+      //         Number(battingStat.stats.GIDP || ''),
+      //         Number(battingStat.stats.XBH || ''),
+      //         Number(battingStat.stats.TB || ''),
+      //         Number(battingStat.stats.IBB || ''),
+      //       ])
+      //       console.log(`Overwrote previously uploaded stats for team ${battingStat.name}`);
+      //       // return resultUpdate.rows;
+      //     }
+      //   }
+      //   return battingStats;
     }
 
-    if (pitchingStats) {
-      console.log('Updating pitching stats');
-    }
+    // if (pitchingStats) {
+    //   console.log('Updating pitching stats');
+    // }
 
-    if (defenseStats) {
-      console.log('Updating defense stats');
-    }
+    // if (defenseStats) {
+    //   console.log('Updating defense stats');
+    // }
 
     return response;
   }

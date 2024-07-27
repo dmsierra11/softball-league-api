@@ -1,10 +1,11 @@
 import { Controller, Get, Param, Query, Post, Body, Put } from '@nestjs/common';
 import { GamesService } from './games.service';
-import { PlayerStats } from '../players/players.types';
+import { BoxScore } from './games.types'
+import { BattingStats } from 'src/batting_stats/batting_stats.types';
 
 @Controller('games')
 export class GamesController {
-  constructor(private readonly gamesService: GamesService) {}
+  constructor(private readonly gamesService: GamesService) { }
 
   @Get()
   findAll(@Query('type') type: string, @Query('team_id') teamId: string) {
@@ -34,19 +35,41 @@ export class GamesController {
     @Param('id') id: string,
     @Body('date') date?: string,
     @Body('time') time?: string,
-    @Body('location_id') locationId?: number,
-    @Body('batting_stats') battingStats?: PlayerStats[],
-    @Body('pitching_stats') pitchingStats?: PlayerStats[],
-    @Body('defense_stats') defenseStats?: PlayerStats[],
+    @Body('location_id') location_id?: number,
+    @Body('home_team') home_team?: BoxScore,
+    @Body('away_team') away_team?: BoxScore,
   ) {
-    return this.gamesService.updateGame(
-      Number(id),
-      date,
-      time,
-      locationId,
-      battingStats,
-      pitchingStats,
-      defenseStats,
-    );
+    console.log('UPDATE GAME: ');
+    if (home_team) {
+      console.log('HOME TEAM:', home_team);
+      const { batting_stats, pitching_stats, defense_stats } = home_team;
+      return this.gamesService.updateGame(
+        'home',
+        Number(id),
+        date,
+        time,
+        location_id,
+        batting_stats,
+        pitching_stats,
+        defense_stats
+      );
+      // return home_team;
+    }
+
+    if (away_team) {
+      console.log('AWAY TEAM:', away_team);
+      const { batting_stats, pitching_stats, defense_stats } = away_team;
+      return this.gamesService.updateGame(
+        'away',
+        Number(id),
+        date,
+        time,
+        location_id,
+        batting_stats,
+        pitching_stats,
+        defense_stats
+      );
+      // return away_team;
+    }
   }
 }
