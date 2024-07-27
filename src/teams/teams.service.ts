@@ -60,7 +60,7 @@ export class TeamsService implements OnModuleDestroy {
   }
 
   async findRoster(id: number, tournament_id: number) {
-    const query = `SELECT team.name as team_name, team.logo, team.short_name, p.name as player_name, p.positions, p.number, p.nationality
+    const query = `SELECT team.name as team_name, team.logo, team.short_name, p.id as player_id, p.name as player_name, p.positions, p.number, p.nationality
       FROM rosters r, players p, tournaments tour, teams team 
       WHERE r.player_id = p.id AND tour.id = r.tournament_id AND team.id = r.team_id AND r.team_id = $1 AND tour.id = $2`;
     const result = await this.pool.query(query, [id, tournament_id]);
