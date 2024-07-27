@@ -11,6 +11,7 @@ import { BattingStatsModule } from './batting_stats/batting_stats.module';
 import { DefenseStatsModule } from './defense_stats/defense_stats.module';
 import { PitchingStatsModule } from './pitching_stats/pitching_stats.module';
 import { StandingsModule } from './standings/standings.module';
+import { RosterModule } from './rosters/rosters.module';
 import { DatabaseService } from './database/database.service';
 
 @Module({
@@ -27,6 +28,7 @@ import { DatabaseService } from './database/database.service';
     DefenseStatsModule,
     PitchingStatsModule,
     StandingsModule,
+    RosterModule,
   ],
   controllers: [AppController],
   providers: [AppService, DatabaseService],
