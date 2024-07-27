@@ -1,10 +1,1 @@
-[
-  {
-    "id": "",
-    "name": "Luis Perez",
-    "nationality": "Venezuela",
-    "gender": "",
-    "number": "",
-    "positions": ["UTILITY"]
-  }
-]
+[{"id":"17","name":"Rita Di Bella","nationality":"Venezuela","gender":"F","number":"","positions":["IF"]},{"id":"18","name":"Carla Ros","nationality":"España","gender":"F","number":"","positions":["IF"]},{"id":"19","name":"Zarah Márquez","nationality":"Venezuela","gender":"F","number":"","positions":["UTILITY"]},{"id":"20","name":"Hugo Ciercoles","nationality":"España","gender":"M","number":"","positions":["OF"]},{"id":"21","name":"Rafael Parra","nationality":"Venezuela","gender":"M","number":"","positions":["UTILITY"]},{"id":"22","name":"Jhon Marcano","nationality":"Venezuela","gender":"M","number":"","positions":["P","OF"]},{"id":"23","name":"José Delgado","nationality":"Venezuela","gender":"M","number":"","positions":["IF"]},{"id":"24","name":"Gianfranco Nion","nationality":"España","gender":"M","number":"","positions":["OF"]},{"id":"25","name":"Mario Sánchez","nationality":"Venezuela","gender":"M","number":"","positions":["IF"]},{"id":"26","name":"Rafael Torres","nationality":"Venezuela","gender":"M","number":"","positions":["OF"]},{"id":"27","name":"Cristian Oviedo","nationality":"Colombia","gender":"M","number":"","positions":["UTILITY"]},{"id":"28","name":"Victor Arias","nationality":"Rep. Dominicana","gender":"M","number":"","positions":["IF"]},{"id":"29","name":"Gustavo Torres","nationality":"Venezuela","gender":"M","number":"","positions":["C","IF"]},{"id":"30","name":"Ricardo González","nationality":"Venezuela","gender":"M","number":"","positions":["OF"]},{"id":"","name":"Luis Perez","nationality":"Venezuela","gender":"","number":"","positions":["UTILITY"]}]
