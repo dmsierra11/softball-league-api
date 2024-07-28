@@ -1,0 +1,32 @@
+[
+  {
+    "name": "PO",
+    "type": "defense",
+    "long_name": "Put Outs",
+    "points": 1
+  },
+  {
+    "name": "E",
+    "type": "defense",
+    "long_name": "Errors",
+    "points": -1
+  },
+  {
+    "name": "CS",
+    "type": "defense",
+    "long_name": "Caught Stealing",
+    "points": 4
+  },
+  {
+    "name": "DP",
+    "type": "defense",
+    "long_name": "Double Plays",
+    "points": 4
+  },
+  {
+    "name": "A",
+    "type": "defense",
+    "long_name": "Assists",
+    "points": 3
+  }
+]
