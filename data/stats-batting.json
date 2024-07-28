@@ -1,0 +1,87 @@
+[
+  {
+    "name": "R",
+    "type": "batting",
+    "long_name": "Runs",
+    "points": 1
+  },
+  {
+    "name": "H",
+    "type": "batting",
+    "long_name": "Hits",
+    "points": 1
+  },
+  {
+    "name": "2B",
+    "type": "batting",
+    "long_name": "Doubles",
+    "points": 2
+  },
+  {
+    "name": "3B",
+    "type": "batting",
+    "long_name": "Triples",
+    "points": 3
+  },
+  {
+    "name": "HR",
+    "type": "batting",
+    "long_name": "Home Runs",
+    "points": 4
+  },
+  {
+    "name": "RBI",
+    "type": "batting",
+    "long_name": "Runs Batted In",
+    "points": 2
+  },
+  {
+    "name": "SO",
+    "type": "batting",
+    "long_name": "Strike Outs",
+    "points": -1
+  },
+  {
+    "name": "BB",
+    "type": "batting",
+    "long_name": "Base on Balls",
+    "points": 1
+  },
+  {
+    "name": "SB",
+    "type": "batting",
+    "long_name": "Stolen Bases",
+    "points": 2
+  },
+  {
+    "name": "SF",
+    "type": "batting",
+    "long_name": "Sacrifice Flies",
+    "points": 1
+  },
+  {
+    "name": "TB",
+    "type": "batting",
+    "long_name": "Total Bases"
+  },
+  {
+    "name": "AVG",
+    "type": "batting",
+    "long_name": "Batting Average"
+  },
+  {
+    "name": "OBP",
+    "type": "batting",
+    "long_name": "On Base Percentage"
+  },
+  {
+    "name": "SLG",
+    "type": "batting",
+    "long_name": "Slugging Percentage"
+  },
+  {
+    "name": "OPS",
+    "type": "batting",
+    "long_name": "On Base Plus Slugging"
+  }
+]

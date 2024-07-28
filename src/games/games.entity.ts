@@ -5,10 +5,12 @@ import {
   ManyToOne,
   JoinColumn,
   Unique,
+  OneToMany,
 } from 'typeorm';
 import { Team } from '../teams/teams.entity';
 import { Tournament } from '../tournaments/tournaments.entity';
 import { Ballpark } from '../ballparks/ballparks.entity';
+import { PlayerStats } from '../player_stats/player_stats.entity';
 
 @Entity()
 @Unique(['home_team', 'away_team', 'date', 'time'])
@@ -55,4 +57,7 @@ export class Game {
   @ManyToOne(() => Ballpark, { nullable: true })
   @JoinColumn({ name: 'location_id' })
   ballpark: Ballpark;
+
+  @OneToMany(() => PlayerStats, (playerStats) => playerStats.game_id)
+  player_stats: PlayerStats[];
 }
