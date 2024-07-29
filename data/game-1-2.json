@@ -1,0 +1,26 @@
+[
+  {
+    "Frangel Abreu": {
+      "position": "1B",
+      "number": 1,
+      "lineup_order": 1,
+      "stats": {
+        "AB": 1,
+        "R": 0,
+        "H": 1
+      },
+      "inning": 1
+    },
+    "Erickson Rodriguez": {
+      "position": "2B",
+      "number": 2,
+      "lineup_order": 2,
+      "stats": {
+        "AB": 1,
+        "R": 0,
+        "H": 0
+      },
+      "inning": 1
+    }
+  }
+]

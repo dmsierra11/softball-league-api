@@ -3,32 +3,13 @@ const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
 
-async function createTables() {
+async function populateTable() {
   const pool = createPool({
     connectionString: process.env.POSTGRES_URL,
   });
   const client = await pool.connect();
 
-  const createGamesTableQuery = `
-    CREATE TABLE IF NOT EXISTS games (
-      id SERIAL PRIMARY KEY,
-      home_team_id INT NOT NULL,
-      away_team_id INT NOT NULL,
-      tournament_id INT NOT NULL,
-      date DATE,
-      time TIME,
-      location_id INT,
-      FOREIGN KEY (home_team_id) REFERENCES teams(id),
-      FOREIGN KEY (away_team_id) REFERENCES teams(id),
-      FOREIGN KEY (tournament_id) REFERENCES tournaments(id),
-      FOREIGN KEY (location_id) REFERENCES ballparks(id)
-    );
-  `;
-
   try {
-    await client.query(createGamesTableQuery);
-    console.log('Games table created successfully');
-
     // Read games data from JSON file
     const dataPath = path.join(__dirname, '../data/games.json');
     const data = fs.readFileSync(dataPath, 'utf8');
@@ -59,4 +40,4 @@ async function createTables() {
   }
 }
 
-createTables();
+populateTable();

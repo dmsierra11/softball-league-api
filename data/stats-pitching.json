@@ -1,0 +1,60 @@
+[
+  {
+    "name": "W",
+    "type": "pitching",
+    "long_name": "Wins",
+    "points": 5
+  },
+  {
+    "name": "L",
+    "type": "pitching",
+    "long_name": "Losses"
+  },
+  {
+    "name": "IP",
+    "type": "pitching",
+    "long_name": "Innings Pitched",
+    "points": 3
+  },
+  {
+    "name": "SO",
+    "type": "pitching",
+    "long_name": "Strikeouts",
+    "points": 2
+  },
+  {
+    "name": "BB",
+    "type": "pitching",
+    "long_name": "Base on Balls",
+    "points": -1
+  },
+  {
+    "name": "ER",
+    "type": "pitching",
+    "long_name": "Earned Runs",
+    "points": -1
+  },
+  {
+    "name": "HR",
+    "type": "pitching",
+    "long_name": "Home Runs Allowed",
+    "points": -2
+  },
+  {
+    "name": "QS",
+    "type": "pitching",
+    "long_name": "Quality Starts",
+    "points": 3
+  },
+  {
+    "name": "QR",
+    "type": "pitching",
+    "long_name": "Quality Refiefs",
+    "points": 2
+  },
+  {
+    "name": "ERA",
+    "type": "pitching",
+    "long_name": "Earned Run Average"
+  }
+]

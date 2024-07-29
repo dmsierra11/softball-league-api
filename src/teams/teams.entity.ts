@@ -12,6 +12,7 @@ import {
 import { Game } from '../games/games.entity';
 import { Ballpark } from '../ballparks/ballparks.entity';
 import { Player } from '../players/players.entity';
+import { PlayerStats } from '../player_stats/player_stats.entity';
 
 @Entity('teams')
 @Unique(['name'])
@@ -47,4 +48,7 @@ export class Team {
     inverseJoinColumn: { name: 'player_id', referencedColumnName: 'id' },
   })
   players?: Player[];
+
+  @OneToMany(() => PlayerStats, (playerStats) => playerStats.team_id)
+  player_stats: PlayerStats[];
 }

@@ -1,6 +1,14 @@
-import { Controller, Get, Param, Query, Post, Body, Put } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Param,
+  Query,
+  Post,
+  Body,
+  Put,
+  Delete,
+} from '@nestjs/common';
 import { GamesService } from './games.service';
-import { PlayerStats } from '../players/players.types';
 
 @Controller('games')
 export class GamesController {
@@ -12,20 +20,24 @@ export class GamesController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string, @Query('boxscore') boxscore?: boolean) {
-    return this.gamesService.findOne(Number(id), boxscore);
+  findOne(@Param('id') id: string) {
+    return this.gamesService.findOne(Number(id));
   }
 
   @Post()
   createGame(
     @Body('away_team_id') awayTeamId: number,
     @Body('home_team_id') homeTeamId: number,
-    @Query('boxscore') boxscore?: string,
+    @Body('tournament_id') tournamentId: number,
+    @Body('date') date?: string,
+    @Body('time') time?: string,
   ) {
     return this.gamesService.createGame(
       Number(awayTeamId),
       Number(homeTeamId),
-      Boolean(boxscore),
+      Number(tournamentId),
+      date,
+      time,
     );
   }
 
@@ -34,19 +46,24 @@ export class GamesController {
     @Param('id') id: string,
     @Body('date') date?: string,
     @Body('time') time?: string,
-    @Body('location_id') locationId?: number,
-    @Body('batting_stats') battingStats?: PlayerStats[],
-    @Body('pitching_stats') pitchingStats?: PlayerStats[],
-    @Body('defense_stats') defenseStats?: PlayerStats[],
+    @Body('location_id') location_id?: number,
+    @Body('away_score') away_score?: number,
+    @Body('home_score') home_score?: number,
+    @Body('status') status?: string,
   ) {
     return this.gamesService.updateGame(
       Number(id),
       date,
       time,
-      locationId,
-      battingStats,
-      pitchingStats,
-      defenseStats,
+      location_id,
+      away_score,
+      home_score,
+      status,
     );
+  }
+
+  @Delete(':id')
+  deleteGame(@Param('id') id: string) {
+    return this.gamesService.deleteGame(Number(id));
   }
 }

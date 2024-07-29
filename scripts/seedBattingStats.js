@@ -10,44 +10,7 @@ async function createTables() {
 
   const client = await pool.connect();
 
-  const createBattingStatsTableQuery = `
-    CREATE TABLE IF NOT EXISTS batting_stats (
-        team_id INT NOT NULL,
-        player_id INT NOT NULL,
-        game_id INT NOT NULL,
-        games_played INT,
-        at_bats INT,
-        runs INT,
-        hits INT,
-        doubles INT,
-        triples INT,
-        home_runs INT,
-        runs_batted_in INT,
-        walks INT,
-        strikeouts INT,
-        sac_flies INT,
-        stolen_bases INT,
-        caught_stealing INT,
-        batting_average FLOAT,
-        on_base_percentage FLOAT,
-        slugging_percentage FLOAT,
-        on_base_plus_slugging FLOAT,
-        plate_appearances INT,
-        ground_into_double_plays INT,
-        extra_base_hits INT,
-        total_bases INT,
-        intentional_walks INT,
-        PRIMARY KEY (team_id, player_id, game_id),
-        FOREIGN KEY (team_id) REFERENCES teams(id),
-        FOREIGN KEY (player_id) REFERENCES players(id),
-        FOREIGN KEY (game_id) REFERENCES games(id)
-    )
-  `;
-
   try {
-    await client.query(createBattingStatsTableQuery);
-    console.log('Batting stats table created successfully');
-
     const team_id = 3;
     const game_id = 4;
     // Read games data from JSON file
