@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -6,18 +6,19 @@ import * as path from 'path';
 export class NewsService {
   private readonly latestNews = [];
   private readonly highlights = [];
+  private readonly contentDir = path.resolve(__dirname, '../../content');
 
   constructor() {
-    this.latestNews = this.loadStats('latestNews.json');
-    this.highlights = this.loadStats('highlights.json');
+    this.latestNews = this.loadNews('latestNews.json');
+    this.highlights = this.loadNews('highlights.json');
   }
 
-  private loadStats(filename: string) {
+  private loadNews(filename: string) {
     const filePath = path.resolve(__dirname, '../../data', filename);
     return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
   }
 
-  getStats(type: string) {
+  async getNews(type: string) {
     switch (type) {
       case 'latest':
         return this.latestNews;
@@ -26,5 +27,13 @@ export class NewsService {
       default:
         return [];
     }
+  }
+
+  async getNewsContent(filename: string): Promise<string> {
+    const filePath = path.join(this.contentDir, `${filename}.md`);
+    if (!fs.existsSync(filePath)) {
+      throw new NotFoundException(`File ${filename} not found`);
+    }
+    return fs.promises.readFile(filePath, 'utf-8');
   }
 }
