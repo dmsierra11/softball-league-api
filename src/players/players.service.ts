@@ -17,19 +17,22 @@ export class PlayersService {
     return result.rows;
   }
 
-  async findOne(id: number) {
+  async findOne(id: number, resultParams?: string) {
     const result = await this.pool.query(
-      'SELECT * FROM players WHERE id = $1',
+      `SELECT ${resultParams || '*'} FROM players WHERE id = $1`,
       [id],
     );
     return result.rows[0];
   }
 
-  async findByName(name: string) {
+  async findByName(name: string, resultParams?: string) {
     const result = await this.pool.query(
-      'SELECT * FROM players WHERE name = $1',
+      `SELECT ${resultParams || '*'} FROM players WHERE LOWER(name) = LOWER($1)`,
       [name],
     );
+    if (result.rows.length === 0) {
+      return null;
+    }
     return result.rows[0];
   }
 

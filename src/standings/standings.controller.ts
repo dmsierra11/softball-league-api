@@ -13,7 +13,7 @@ import { Standings } from './standings.types';
 
 @Controller('standings')
 export class StandingsController {
-  constructor(private readonly standingsService: StandingsService) { }
+  constructor(private readonly standingsService: StandingsService) {}
 
   @Get()
   async findAll(@Query('tournament_id') tournamentId): Promise<Standings[]> {
@@ -21,9 +21,7 @@ export class StandingsController {
   }
 
   @Put()
-  async update(
-    @Body() standings: Standings[],
-  ): Promise<Standings[]> {
+  async update(@Body() standings: Standings[]): Promise<Standings[]> {
     return this.standingsService.update(standings);
   }
 }

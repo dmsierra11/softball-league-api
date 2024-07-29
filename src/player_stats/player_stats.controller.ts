@@ -16,7 +16,7 @@ export class PlayerStatsController {
   constructor(private readonly playerStatsService: PlayerStatsService) {}
 
   @Post()
-  create(@Body() createPlayerStats: PlayerStats) {
+  create(@Body() createPlayerStats: PlayerStats[]) {
     return this.playerStatsService.create(createPlayerStats);
   }
 

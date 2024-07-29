@@ -63,7 +63,8 @@ export type StatsName =
 
 export type Stats = {
   id: number;
-  name: StatsName;
-  key: BattingStats | PitchingStats | DefenseStats;
+  name: BattingStats | PitchingStats | DefenseStats;
+  type: 'batting' | 'pitching' | 'defense';
+  long_name?: StatsName;
   points?: number;
 };

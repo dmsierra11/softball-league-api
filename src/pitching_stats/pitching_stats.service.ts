@@ -14,31 +14,34 @@ export class PitchingStatsService {
 
   async findAll(): Promise<PitchingStats[]> {
     const result = await this.pool.query(`
-      SELECT p.name as player_name, t.name as team_name, p.positions, stats.*
-      FROM pitching_stats stats, players p, games g, teams t
-      WHERE stats.player_id = p.id AND stats.game_id = g.id AND stats.team_id = t.id`);
+      SELECT t.name AS team_name, p.name AS player_name, p.positions, jsonb_object_agg(s.name, ps.value) AS stats
+        FROM player_stats ps
+        JOIN 
+            teams t ON ps.team_id = t.id
+        JOIN 
+            players p ON ps.player_id = p.id
+        JOIN 
+            stats s ON ps.stat_id = s.id
+        JOIN 
+            games g ON ps.game_id = g.id
+        WHERE 
+            g.tournament_id = 1 AND s.type = 'pitching'
+        GROUP BY 
+            t.name, p.name, p.positions;
+      `);
 
-    const response = result.rows.map((row) => {
+    const queryFields = `SELECT name FROM stats WHERE type = 'pitching'`;
+    const resultFields = await this.pool.query(queryFields);
+    const fields = resultFields.rows.map((row) => row.name);
+
+    return result.rows.map((row) => {
       return {
         name: row.player_name,
         team: row.team_name,
         position: row.positions.join(', '),
-        stats: {
-          'IP': row.innings_pitched,
-          'H': row.hits,
-          'R': row.runs,
-          'ER': row.earned_runs,
-          'BB': row.walks,
-          'SO': row.strikeouts,
-          'HR': row.home_runs,
-          'ERA': row.era,
-          'WHIP': row.whip,
-          'SV': row.saves,
-          'BSV': row.blown_saves,
-        },
+        stats: row.stats,
+        categories: fields,
       };
     });
-
-    return response;
   }
 }
