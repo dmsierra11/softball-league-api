@@ -29,6 +29,7 @@ export const createGamesQuery = `CREATE TABLE games (
     location_id INT,
     date DATE,
     time TIME,
+    name VARCHAR(50),
     status VARCHAR(10),
     progress INT,
     home_team_score INT,

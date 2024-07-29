@@ -18,10 +18,10 @@ export class GamesService {
 
   async findAll(type?: string, team?: string) {
     const now = moment().tz('Europe/Madrid'); // Use Spain timezone
-    let query = `SELECT g.id, g.date, g.time, g.status, g.home_team_score, g.away_team_score, g.winner, home_team.name AS home_team, home_team.short_name AS home_team_short_name, home_team.id AS home_team_id,
-        away_team.name AS away_team, away_team.short_name AS away_team_short_name, away_team.id AS away_team_id, bp.name
-        FROM games g, teams home_team, teams away_team, ballparks bp
-        WHERE g.home_team_id = home_team.id AND g.away_team_id = away_team.id AND g.location_id = bp.id`;
+    let query = `SELECT g.id, g.date, g.time, g.status, g.name as game_name, g.home_team_score, g.away_team_score, g.winner, home_team.name AS home_team, home_team.short_name AS home_team_short_name, home_team.id AS home_team_id,
+        away_team.name AS away_team, away_team.short_name AS away_team_short_name, away_team.id AS away_team_id
+        FROM games g, teams home_team, teams away_team
+        WHERE g.home_team_id = home_team.id AND g.away_team_id = away_team.id`;
     if (type === 'upcoming') {
       query += ` AND g.date >= '${now.format('YYYY-MM-DD')}'`;
     } else if (type === 'results') {
@@ -30,29 +30,37 @@ export class GamesService {
     if (team) {
       query += ` AND (home_team.id = '${team}' OR away_team.id = '${team}')`;
     }
+    query += ` ORDER BY id DESC`;
     const { rows } = await this.pool.query(query);
     console.log(`${rows.length} games found`);
 
-    return rows.map((row) => ({
-      // ...row,
-      date: moment(row.date).tz('Europe/Madrid').format('DD/MM'), // Convert to Spain timezone
-      time: moment(row.time, 'HH:mm:ss').format('HH:mm'),
-      status: row.status,
-      home_team_score: row.home_team_score,
-      away_team_score: row.away_team_score,
-      home_team: {
-        id: row.home_team_id,
-        name: row.home_team,
-        short_name: row.home_team_short_name,
-        record: `0-0`,
-      },
-      away_team: {
-        id: row.away_team_id,
-        name: row.away_team,
-        short_name: row.away_team_short_name,
-        record: `0-0`,
-      },
-    }));
+    let gameIndex = rows.length + 1;
+    return rows.map((row) => {
+      gameIndex--;
+      return {
+        id: row.id,
+        date: moment(row.date).tz('Europe/Madrid').format('DD/MM'), // Convert to Spain timezone
+        time: moment(row.time, 'HH:mm:ss').format('HH:mm'),
+        status: row.status,
+        name: row.game_name || `Juego ${gameIndex}`,
+        home_team_score: row.home_team_score,
+        away_team_score: row.away_team_score,
+        home_team: {
+          id: row.home_team_id,
+          name: row.home_team.split(' ')[0],
+          // short_name: row.home_team_short_name,
+          // record: `0-0`,
+          score: row.home_team_score,
+        },
+        away_team: {
+          id: row.away_team_id,
+          name: row.away_team.split(' ')[0],
+          // short_name: row.away_team_short_name,
+          // record: `0-0`,
+          score: row.away_team_score,
+        },
+      };
+    });
   }
 
   async findOne(id: number) {
@@ -90,11 +98,6 @@ export class GamesService {
     time?: string,
     location_id?: number,
   ) {
-    console.log(`Creating game for teams ${home_team_id} and ${away_team_id}`);
-    console.log(`Tournament id: ${tournament_id}`);
-    console.log(`Date: ${date}`);
-    console.log(`Time: ${time}`);
-    console.log(`Location id: ${location_id}`);
     const querySelect = `SELECT id FROM games WHERE home_team_id = $1 AND away_team_id = $2
       AND tournament_id = $3 AND date = $4 AND time = $5`;
     const { rows: rowsSelect } = await this.pool.query(querySelect, [

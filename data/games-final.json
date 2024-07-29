@@ -1,0 +1,136 @@
+[
+  {
+    "away_team_id": 5,
+    "home_team_id": 4,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "9:00",
+    "location_id": 2,
+    "away_score": 7,
+    "home_score": 11,
+    "status": "final"
+  },
+  {
+    "away_team_id": 1,
+    "home_team_id": 3,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "9:00",
+    "location_id": 2,
+    "away_score": 12,
+    "home_score": 4,
+    "status": "final"
+  },
+  {
+    "away_team_id": 1,
+    "home_team_id": 4,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "10:15",
+    "location_id": 1,
+    "away_score": 2,
+    "home_score": 9,
+    "status": "final"
+  },
+  {
+    "away_team_id": 2,
+    "home_team_id": 3,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "10:15",
+    "location_id": 2,
+    "away_score": 6,
+    "home_score": 9,
+    "status": "final"
+  },
+  {
+    "away_team_id": 2,
+    "home_team_id": 5,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "11:30",
+    "location_id": 1,
+    "away_score": 6,
+    "home_score": 7,
+    "status": "final"
+  },
+  {
+    "away_team_id": 4,
+    "home_team_id": 3,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "12:30",
+    "location_id": 1,
+    "away_score": 6,
+    "home_score": 5,
+    "status": "final"
+  },
+  {
+    "away_team_id": 5,
+    "home_team_id": 1,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "12:30",
+    "location_id": 2,
+    "away_score": 6,
+    "home_score": 15,
+    "status": "final"
+  },
+  {
+    "away_team_id": 2,
+    "home_team_id": 1,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "14:00",
+    "location_id": 1,
+    "away_score": 4,
+    "home_score": 8,
+    "status": "final"
+  },
+  {
+    "away_team_id": 3,
+    "home_team_id": 5,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "15:15",
+    "location_id": 1,
+    "away_score": 6,
+    "home_score": 11,
+    "status": "final"
+  },
+  {
+    "away_team_id": 4,
+    "home_team_id": 2,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "15:15",
+    "location_id": 1,
+    "away_score": 6,
+    "home_score": 11,
+    "status": "final"
+  },
+  {
+    "away_team_id": 3,
+    "home_team_id": 5,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "16:30",
+    "location_id": 1,
+    "away_score": 21,
+    "home_score": 6,
+    "status": "final",
+    "name": "Tercer Lugar"
+  },
+  {
+    "away_team_id": 1,
+    "home_team_id": 4,
+    "tournament_id": 1,
+    "date": "2024-07-28",
+    "time": "18:00",
+    "location_id": 1,
+    "away_score": 7,
+    "home_score": 8,
+    "status": "final",
+    "name": "Final"
+  }
+]
