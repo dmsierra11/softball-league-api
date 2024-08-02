@@ -1,8 +1,14 @@
 [
   {
-    "href": "/news/summary-summer-camp-2024",
-    "imgSrc": "https://raw.githubusercontent.com/dmsierra11/softball-league-api/images/assets/images/dragons-victory.webp",
-    "title": "Los Dragones ganan el campeonato regional",
-    "text": "Los Dragones han ganado el campeonato regional después de una emocionante final contra los Tigres. El partido se celebró en el estadio de Montjuic."
+    "href": "/news/training-camp-summary-2024",
+    "imgSrc": "https://raw.githubusercontent.com/dmsierra11/softball-league-api/images/assets/images/chuchos-victory.webp",
+    "title": "Los Chuchos de Viladecans triunfan en el Training Camp 2024",
+    "text": "Los Chuchos de Viladecans se coronaron campeones del Training Summer Camp 2024 tras una electrizante final contra los Tiburones de Gavá. El evento se llevó a cabo en Montjuic, destacando por su emoción y el talento mostrado por los equipos participantes."
+  },
+  {
+    "href": "/news/summer-camp-2024-final",
+    "imgSrc": "https://raw.githubusercontent.com/dmsierra11/softball-league-api/images/assets/images/new-stadium-opening.webp",
+    "title": "Chuchos de Viladecans Conquistan el Título en un Épico Final del Summer Camp 2024",
+    "text": "Los Chuchos de Viladecans se coronaron campeones del Summer Camp 2024 tras una victoria dramática de 9-8 contra los Tiburones de Gava. El partido estuvo lleno de momentos emocionantes, incluido un crucial jonrón de Adony Campoalegre que empató el juego y una destacada jugada defensiva de Pedro Reyes. Sin embargo, fue Yonalber Muñoz quien se robó el espectáculo con un jonrón decisivo que le otorgó el título de MVP y mejor bateador del torneo."
   }
 ]
